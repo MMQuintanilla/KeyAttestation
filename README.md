@@ -40,22 +40,22 @@ The app:
 4. Prints the entire certificate chain in Logcat
 
 ### Example Logcat Output
-
+```
 Certificate 0:
 Attestation Leaf Certificate
 Certificate 1:
 Android Attestation Sub-CA
 Certificate 2:
 Google Root Certificate
-
+```
 
 ---
 
 ## Attestation JSON Sent to Backend
 
 The app encodes the certificate chain into Base64 and sends:
-
-```json
+```
+  json
 {
   "challenge": "MARTA_TEST",
   "cert_chain": [
@@ -63,7 +63,8 @@ The app encodes the certificate chain into Base64 and sends:
     "MIIDTDCCAjSgAwIBAgIU...base64...",
     "MIICJDCCAa6gAwIBA...root..."
   ]
-}```
+}
+```
 
 ## Example Run
 
@@ -86,7 +87,8 @@ D/ATTEST: Server response body: {
             "message": "Attestation verified on server",
             "securityLevel": "StrongBox",
             "status": "ok"
-          }```
+          }
+```
 
 ### Flask Backend Output
 
@@ -105,8 +107,7 @@ D/ATTEST: Server response body: {
 [SERVER] Signature of cert 2 verified with issuer cert 3.
 [SERVER] Attestation chain verified successfully.
 [SERVER] StrongBox marker found in subject[1].
-[SERVER] StrongBox attestation confirmed.```
-
+[SERVER] StrongBox attestation confirmed.
 ```
 
 ### Networking / Ports (WSL, Device, Emulator)
