@@ -22,7 +22,7 @@ This PoC is intentionally minimal and meant for learning and experimentation.
 ├── gradle/         # Gradle wrapper
 ├── build.gradle.kts
 ├── gradle.properties
-└── README.md
+└── README.md```
 
 
 ---
@@ -62,7 +62,7 @@ The app encodes the certificate chain into Base64 and sends:
     "MIIDTDCCAjSgAwIBAgIU...base64...",
     "MIICJDCCAa6gAwIBA...root..."
   ]
-}
+}```
 
 ## Example Run
 
@@ -85,10 +85,11 @@ D/ATTEST: Server response body: {
             "message": "Attestation verified on server",
             "securityLevel": "StrongBox",
             "status": "ok"
-          }
+          }```
 
 ### Flask Backend Output
-=== Received attestation request ===
+
+```=== Received attestation request ===
 {'challenge': 'MARTA_TEST', 'certChain': ['MIIE...', 'MIIE...', 'MIIF...', 'MIIF...']}
 [SERVER] Cert 0 subject: CN=Android Keystore Key
 [SERVER] Cert 0 issuer : ... StrongBox
@@ -103,7 +104,7 @@ D/ATTEST: Server response body: {
 [SERVER] Signature of cert 2 verified with issuer cert 3.
 [SERVER] Attestation chain verified successfully.
 [SERVER] StrongBox marker found in subject[1].
-[SERVER] StrongBox attestation confirmed.
+[SERVER] StrongBox attestation confirmed.```
 
 ```
 
@@ -112,7 +113,7 @@ D/ATTEST: Server response body: {
 The backend listens on port 5000.
 Depending on where you run Android (real device vs emulator) and how you run Flask (WSL vs native Windows), the URL inside the app must be adjusted, otherwise you’ll get errors like:
 
-java.net.ConnectException: Failed to connect to /192.168.x.x:5000
+```java.net.ConnectException: Failed to connect to /192.168.x.x:5000```
 
 1. Flask in WSL + Physical Android Device (what this PoC uses)
 
