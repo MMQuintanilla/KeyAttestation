@@ -27,9 +27,9 @@ This PoC is intentionally minimal and meant for learning and experimentation.
 
 ---
 
-## 📱 Android App
+## Android App
 
-### 🔑 Key Attestation Generation
+### Key Attestation Generation
 
 The app:
 
