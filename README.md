@@ -104,3 +104,22 @@ D/ATTEST: Server response body: {
 [SERVER] Attestation chain verified successfully.
 [SERVER] StrongBox marker found in subject[1].
 [SERVER] StrongBox attestation confirmed.
+
+```
+
+### Networking / Ports (WSL, Device, Emulator)
+
+The backend listens on port 5000.
+Depending on where you run Android (real device vs emulator) and how you run Flask (WSL vs native Windows), the URL inside the app must be adjusted, otherwise you’ll get errors like:
+
+java.net.ConnectException: Failed to connect to /192.168.x.x:5000
+
+1. Flask in WSL + Physical Android Device (what this PoC uses)
+
+When you run python backend.py inside WSL, Flask shows something like:
+
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.24.53.136:5000
+
+Alternative: adb reverse (device / emulator)
+You can also forward the port with adb: ```adb reverse tcp:5000 tcp:5000```
