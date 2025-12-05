@@ -15,14 +15,15 @@ This PoC is intentionally minimal and meant for learning and experimentation.
 
 ## Project Structure
 
-```text
+```
 .
 ├── app/            # Android Studio project (Compose UI + attestation logic)
 ├── backend/        # Flask server for receiving attestation JSON
 ├── gradle/         # Gradle wrapper
 ├── build.gradle.kts
 ├── gradle.properties
-└── README.md```
+└── README.md
+```
 
 
 ---
